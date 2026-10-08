@@ -1,0 +1,224 @@
+Practical No.6
+Aim: To understand phishing and email spoofing through a safe simulation and identify techniques for detecting and preventing such attacks.
+Requirements
+Kali Linux / Windows 
+Web browser 
+Email sample created for the practical 
+No real credentials or personal information 
+Part A: Phishing Awareness Simulation
+Step 1: Create a simulated phishing email
+Use a text editor and create a sample such as:
+Subject: Urgent: Account Verification Required
+
+Dear User,
+
+Your account requires immediate verification.
+Please verify your account within 24 hours to avoid suspension.
+
+[VERIFY YOUR ACCOUNT]
+
+Regards,
+Security Team
+Do not actually send this message to real users.
+Step 2: Identify the warning signs
+Ask students to examine the message and identify:
+Urgency – "within 24 hours" 
+Threat – "account suspension" 
+Generic greeting – "Dear User" 
+Unexpected request – asks the user to verify an account 
+Suspicious link – destination should be checked before clicking 
+Sender identity – sender address should be verified 
+Part B: Demonstrate Email Spoofing Concept
+What is email spoofing?
+Email spoofing occurs when an email is made to appear as though it came from a trusted sender, even though it was actually sent by someone else.
+For example:
+Displayed sender:
+IT Support <it-support@example.com>
+
+Actual sender:
+unknown/untrusted source
+The important point is that the displayed From name alone cannot prove who sent the email.
+Safe simulation
+Create a screenshot/mock email header or write the following on paper:
+From: IT Support <it-support@example.com>
+To: Student
+Subject: Password Expiration
+
+Authentication results:
+SPF: FAIL
+DKIM: FAIL
+DMARC: FAIL
+Ask students:
+"Should this email be trusted?"
+Expected answer:
+No. The authentication failures are strong warning signs.
+Part C: Examine Email Headers
+If you receive a legitimate test email in your own account, open it and select:
+Show original / View source / View message details
+Look for:
+From:
+Return-Path:
+Received:
+Authentication-Results:
+SPF:
+DKIM:
+DMARC:
+Meaning
+Term
+Purpose
+
+SPF
+Checks whether a server is authorized to send mail for a domain
+
+DKIM
+Uses a cryptographic signature to verify email integrity/source
+
+DMARC
+Helps domain owners specify how SPF/DKIM failures should be handled
+
+Part D: How to Defend Against Phishing
+Users should:
+Check the complete sender address. 
+Hover over links before clicking. 
+Never share passwords or OTPs through email. 
+Be suspicious of urgent requests. 
+Access banking/email services through their official app or manually typed website. 
+Enable MFA. 
+Report suspicious emails. 
+Organizations should:
+Configure SPF, DKIM and DMARC. 
+Use email security filters. 
+Conduct phishing-awareness training. 
+Monitor suspicious login activity. 
+Establish an incident-reporting process. 
+Simple Classroom Exercise
+From: bank-security@example.net
+Subject: URGENT – Account Will Be Blocked
+Your account will be blocked today.
+Click the link below to verify your account immediately.
+Ask them to identify at least five red flags.
+Expected observations
+Observation
+Risk
+
+Urgent language
+Pressures user
+
+Threat of account blocking
+Creates fear
+
+Unknown sender/domain
+Possible impersonation
+
+Unexpected verification request
+Possible credential theft
+
+Suspicious link
+Could lead to malicious website
+
+Result
+Thus, phishing awareness and email spoofing concepts were demonstrated through a controlled simulation, and methods for detecting and preventing phishing attacks were identified.
+
+
+Practical No.7
+Aim: Explore Social Engineering Techniques and Defenses
+1. Common Social Engineering Techniques
+Technique
+Example
+Main Risk
+
+Phishing
+Fake bank email asking you to click a link
+Credential theft
+
+Spear phishing
+Personalized message targeting one employee
+Account compromise
+
+Smishing
+Fake SMS saying "Your account will be blocked"
+Malicious links
+
+Vishing
+Fake bank/support phone call
+Disclosure of OTP/details
+
+Pretexting
+Attacker pretends to be IT support
+Information disclosure
+
+Baiting
+"Free software" or infected USB
+Malware
+
+Quid pro quo
+Fake technical support offering help
+Credential theft
+
+Tailgating
+Following an employee into a restricted area
+Unauthorized access
+
+
+2. Simple Practical Simulation
+Create a fake phishing message for classroom analysis.
+Example:
+Subject: Urgent – Your Account Requires Verification
+Dear Customer,
+Your account will be temporarily suspended unless you verify your account immediately.
+Verify Account
+Regards,
+Security Team
+Ask students to identify the warning signs.
+Red flags
+Creates urgency or fear 
+Requests immediate action 
+Uses a generic greeting 
+Contains a suspicious link 
+Requests confidential information 
+May use a fake sender address 
+Contains spelling/grammar inconsistencies 
+3. Demonstrate Link Inspection
+Instead of clicking a suspicious link, hover over it and examine the actual URL.
+For example:
+Displayed:
+https://bank-example.com/verify
+
+Actual:
+https://bank-example-login.example.net/verify
+The domain should be carefully checked before opening the website.
+4. Defensive Measures
+For individuals
+Never share OTP, PIN, CVV or passwords 
+Verify unexpected requests through an official channel 
+Don't click suspicious links 
+Check the sender's email address 
+Use MFA 
+Use strong, unique passwords 
+Keep software updated 
+Report suspicious messages 
+For organizations
+Conduct security-awareness training 
+Implement email filtering 
+Use MFA 
+Apply least-privilege access 
+Establish incident-reporting procedures 
+Conduct authorized phishing-awareness exercises 
+Monitor suspicious login activity 
+5. Simple Classroom Exercise
+Give students these three messages and ask them to classify them:
+Message A
+"Your bank account will be blocked in 2 hours. Click here immediately to verify."
+Message B
+"Hi, this is IT Support. Please send me your password so I can fix your account."
+Message C
+"Your monthly bank statement is available. Log in through your bank's official mobile application."
+Students should identify:
+A → Phishing 
+B → Pretexting / impersonation 
+C → Potentially legitimate, but independently verify 
+Result
+Thus, common social engineering techniques were explored, their warning signs were identified, and appropriate preventive measures were studied.
+For a college practical, this is safer and simpler than actually sending phishing emails or collecting credentials.
+
+Safety note: Keep the exercise entirelysimulated—don't send deceptive emails, collect passwords/OTPs, or im
